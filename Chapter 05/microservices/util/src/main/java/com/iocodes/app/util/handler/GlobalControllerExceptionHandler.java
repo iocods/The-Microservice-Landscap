@@ -10,8 +10,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
-import static org.springframework.http.HttpStatus.NOT_FOUND;
-import static org.springframework.http.HttpStatus.UNPROCESSABLE_CONTENT;
+import static org.springframework.http.HttpStatus.*;
 
 @RestControllerAdvice
 public class GlobalControllerExceptionHandler {
@@ -24,6 +23,12 @@ public class GlobalControllerExceptionHandler {
 
     @ResponseStatus(NOT_FOUND)
     @ExceptionHandler(NotFoundException.class)
+    public @ResponseBody HttpErrorResponse handleNotFoundException (ServerHttpRequest request, NotFoundException ex) {
+        return createHttpErrorResponse(NOT_FOUND, request, ex);
+    }
+
+    @ResponseStatus(BAD_REQUEST)
+    @ExceptionHandler(BadRequestException.class)
     public @ResponseBody HttpErrorResponse handleNotFoundException (ServerHttpRequest request, NotFoundException ex) {
         return createHttpErrorResponse(NOT_FOUND, request, ex);
     }

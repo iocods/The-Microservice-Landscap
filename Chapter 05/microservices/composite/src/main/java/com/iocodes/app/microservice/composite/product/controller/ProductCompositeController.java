@@ -2,6 +2,7 @@ package com.iocodes.app.microservice.composite.product.controller;
 
 import com.iocodes.app.api.composite.product.AbstractProductCompositeController;
 import com.iocodes.app.api.composite.product.ProductAggregate;
+import com.iocodes.app.api.exception.BadRequestException;
 import com.iocodes.app.api.exception.InvalidInputException;
 import com.iocodes.app.api.exception.NotFoundException;
 import com.iocodes.app.microservice.composite.product.services.ProductAggregateService;
@@ -40,6 +41,7 @@ public class ProductCompositeController implements AbstractProductCompositeContr
             switch (code) {
                 case NOT_FOUND -> throw new NotFoundException(getErrorMessage(ex));
                 case UNPROCESSABLE_CONTENT -> throw new InvalidInputException(getErrorMessage(ex));
+                case BAD_REQUEST -> throw new BadRequestException(getErrorMessage(ex));
                 case null, default -> throw new RuntimeException("An Error Occurred while processing the request");
             }
         }

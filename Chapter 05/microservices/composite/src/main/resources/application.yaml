@@ -1,7 +1,8 @@
 spring:
   application:
     name: CompositeService
-
+  config:
+    import: "classpath:application-springdoc.yaml"
 logging:
   level:
     root: INFO
