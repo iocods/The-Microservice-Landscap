@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: ProductService
+
+
+logging:
+  level:
+    root: INFO
+    com.iocodes.app: DEBUG
+
+
+server.port: 7001
