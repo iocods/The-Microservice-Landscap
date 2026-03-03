@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: RecommendationService
+
+
+logging:
+  level:
+    root: INFO
+    com.iocodes.app: DEBUG
+
+server.port: 7002
+
+---
+spring.config.activate.on-profile: docker
+server.port: 8080
