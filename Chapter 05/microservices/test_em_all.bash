@@ -115,9 +115,20 @@ assertEqual 0 $(echo "$RESPONSE" | jq ".reviews | length")
 
 assertCurl 200 "curl http://${HOST}:${PORT}/product-composite/${PRODUCT_ID_NO_REC} -s"
 
-assertEqual "$PRODUCT_ID_NO_REC" $(echo "$RESPONSE" | jq .productId)
+assertEqual "$PRODUCT_ID_NO_REC" $(echo $RESPONSE | jq .productId)
 assertEqual 0 $(echo "$RESPONSE" | jq ".recommendations | length")
 assertEqual 3 $(echo "$RESPONSE" | jq ".reviews | length")
+
+echo "Swagger/OpenAPI Documentation Tests"
+assertCurl 302 "curl -s http://${HOST}:${PORT}/openapi/swagger-ui.html"
+assertCurl 200 "curl -sL http://${HOST}:${PORT}/openapi/swagger-ui.html"
+
+
+assertCurl 200 "curl -s http://${HOST}:${PORT}/openapi/v3/api-docs"
+assertEqual "3.1.0" $(echo "$RESPONSE" | jq -r .openapi)
+assertEqual "http://${HOST}:${PORT}" "$(echo "$RESPONSE" | jq -r '.servers[0].url')"
+assertCurl 200 "curl -s http://$HOST:$PORT/openapi/v3/api-docs.yaml"
+
 
 
 if [[ $@ == *"stop"* ]]

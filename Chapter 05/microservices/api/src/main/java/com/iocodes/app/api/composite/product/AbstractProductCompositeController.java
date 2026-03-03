@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 public interface AbstractProductCompositeController {
 
     @Operation(
-        tags = {"Get Product"},
-        description = "Requests for a product by its id",
-        responses = {
+        description = "Requests for a product by its id"
+    )
+    @ApiResponses(
+        value = {
             @ApiResponse(responseCode = "200", description = "Product retrieved successfully"),
             @ApiResponse(responseCode = "422", description = "Product request could not be processed"),
             @ApiResponse(responseCode = "404", description = "Product not found"),

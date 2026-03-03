@@ -1,5 +1,6 @@
 package com.iocodes.app.util.handler;
 
+import com.iocodes.app.api.exception.BadRequestException;
 import com.iocodes.app.api.exception.InvalidInputException;
 import com.iocodes.app.api.exception.NotFoundException;
 import com.iocodes.app.util.error.HttpErrorResponse;
@@ -29,7 +30,7 @@ public class GlobalControllerExceptionHandler {
 
     @ResponseStatus(BAD_REQUEST)
     @ExceptionHandler(BadRequestException.class)
-    public @ResponseBody HttpErrorResponse handleNotFoundException (ServerHttpRequest request, NotFoundException ex) {
+    public @ResponseBody HttpErrorResponse handleBadRequestException (ServerHttpRequest request, BadRequestException ex) {
         return createHttpErrorResponse(NOT_FOUND, request, ex);
     }
 

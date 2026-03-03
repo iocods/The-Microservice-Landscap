@@ -17,9 +17,9 @@ public class CompositeAppConfig {
     private String apiTitle;
     @Value("${api.common.description}")
     private String apiDescription;
-    @Value("${api.common.apiVersion}")
+    @Value("${api.common.version}")
     private String apiVersion;
-    @Value("${api.common.apiTermsOfService}")
+    @Value("${api.common.termsOfService}")
     private String apiTermsOfService;
     @Value("${api.common.contact.name}")
     private String apiContactName;
