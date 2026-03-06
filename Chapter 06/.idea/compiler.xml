@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="microservices.composite" options="-parameters" />
+      <module name="microservices.composite.main" options="-parameters" />
+      <module name="microservices.composite.test" options="-parameters" />
+      <module name="microservices.product" options="-parameters" />
+      <module name="microservices.product.main" options="-parameters" />
+      <module name="microservices.product.test" options="-parameters" />
+      <module name="microservices.recommendation" options="-parameters" />
+      <module name="microservices.recommendation.main" options="-parameters" />
+      <module name="microservices.recommendation.test" options="-parameters" />
+      <module name="microservices.review" options="-parameters" />
+      <module name="microservices.review.main" options="-parameters" />
+      <module name="microservices.review.test" options="-parameters" />
+    </option>
+  </component>
+</project>

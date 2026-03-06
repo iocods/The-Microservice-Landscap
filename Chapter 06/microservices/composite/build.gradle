@@ -8,6 +8,10 @@ group = 'com.iocodes.app.microservice.core'
 version = '0.0.1-SNAPSHOT'
 description = 'A demo spring boot product application composite service for an incoporating microservice landscape.'
 
+ext {
+	mapstructVersion = '1.6.2'
+}
+
 java {
 	toolchain {
 		languageVersion = JavaLanguageVersion.of(21)
@@ -23,11 +27,24 @@ repositories {
 }
 
 dependencies {
+	// Internal Library Dependencies
 	implementation project(":api")
 	implementation project(":util")
+
+	// Web and metrics dependencies
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// Mapstruct map based dependencies
+	implementation "org.mapstruct:mapstruct:${mapstructVersion}"
+	compileOnly "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	annotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
+
+	// Spring doc OpenAPI based dependency
 	implementation 'org.springdoc:springdoc-openapi-starter-webflux-ui:3.0.1'
+
+	// Test Based dependencies
 	testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
