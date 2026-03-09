@@ -3,6 +3,12 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/Chapter 06.iml" filepath="$PROJECT_DIR$/.idea/Chapter 06.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product/microservices.product.main.iml" filepath="$PROJECT_DIR$/.idea/modules/product/microservices.product.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/product/microservices.product.test.iml" filepath="$PROJECT_DIR$/.idea/modules/product/microservices.product.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation/microservices.recommendation.main.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation/microservices.recommendation.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/recommendation/microservices.recommendation.test.iml" filepath="$PROJECT_DIR$/.idea/modules/recommendation/microservices.recommendation.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/review/microservices.review.main.iml" filepath="$PROJECT_DIR$/.idea/modules/review/microservices.review.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/review/microservices.review.test.iml" filepath="$PROJECT_DIR$/.idea/modules/review/microservices.review.test.iml" />
     </modules>
   </component>
 </project>

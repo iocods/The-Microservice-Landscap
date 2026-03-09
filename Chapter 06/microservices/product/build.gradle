@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.iocodes.app.microservice.core'
 version = '0.0.1-SNAPSHOT'
-description = 'A demo spring boot product project for an incorporating microservice landscape.'
+description = 'A demo spring boot product recommendation service for an incoporating microservice landscape.'
 
 ext {
 	mapstructVersion = '1.6.2'
@@ -39,14 +39,16 @@ dependencies {
 	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
 	// TEST BASED DEPENDENCIES
-	// Test containers Dependencies
-	implementation platform('org.testcontainers:testcontainers-bom:2.0.2')
-	testImplementation 'org.testcontainers:testcontainers'
-	testImplementation 'org.testcontainers:junit-jupiter'
-	testImplementation 'org.testcontainers:mongodb'
-
-	testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
 	testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb-test'
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+
+	// ── Test: Testcontainers BOM (must come before modules) ───────
+	testImplementation platform('org.testcontainers:testcontainers-bom:2.0.2')
+	testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
+	testImplementation 'org.testcontainers:testcontainers-mongodb'
+
+	// ── Test: Runtime ─────────────────────────────────────────────
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

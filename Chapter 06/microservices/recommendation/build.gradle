@@ -39,14 +39,13 @@ dependencies {
 	testAnnotationProcessor "org.mapstruct:mapstruct-processor:${mapstructVersion}"
 
 	// TEST BASED DEPENDENCIES
-	// Test containers Dependencies
-	implementation platform('org.testcontainers:testcontainers-bom:2.0.2')
-	testImplementation 'org.testcontainers:testcontainers'
-	testImplementation 'org.testcontainers:junit-jupiter'
-	testImplementation 'org.testcontainers:mongodb'
+	testImplementation 'org.springframework.boot:spring-boot-testcontainers'
+	testImplementation 'org.springframework.boot:spring-boot-starter-data-mongodb-test'
+	testImplementation platform('org.testcontainers:testcontainers-bom:2.0.2')
+	testImplementation 'org.testcontainers:testcontainers-junit-jupiter'
+	testImplementation 'org.testcontainers:testcontainers-mongodb'      // MongoDB
 
-	testImplementation 'org.springframework.boot:spring-boot-starter-actuator-test'
-	testImplementation 'org.springframework.boot:spring-boot-starter-webflux-test'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 

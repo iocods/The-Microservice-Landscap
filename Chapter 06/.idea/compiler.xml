@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Gradle Imported" enabled="true">
+        <outputRelativeToContentRoot value="true" />
+        <processorPath useClasspath="false">
+          <entry name="$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.mapstruct/mapstruct-processor/1.6.2/68f761eab9d57ea0a3721aaca822cdff5eaaf972/mapstruct-processor-1.6.2.jar" />
+        </processorPath>
+        <module name="microservices.composite.main" />
+        <module name="microservices.product.main" />
+        <module name="microservices.review.main" />
+        <module name="microservices.recommendation.test" />
+        <module name="microservices.composite.test" />
+        <module name="microservices.product.test" />
+        <module name="microservices.recommendation.main" />
+        <module name="microservices.review.test" />
+      </profile>
+    </annotationProcessing>
+  </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
       <module name="microservices.composite" options="-parameters" />
