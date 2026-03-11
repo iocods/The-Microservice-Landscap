@@ -61,15 +61,48 @@ public class ProductAggregateService implements AbstractProductController, Abstr
     }
 
     @Override
+    public Product createProduct(Product body) {
+        return restTemplate.postForObject(productServiceUrl, body, Product.class);
+    }
+
+    @Override
+    public void deleteProduct(int productId) {
+        String url = productServiceUrl + "/" + productId;
+        restTemplate.delete(url);
+    }
+
+    @Override
     public List<Recommendation> getRecommendations(int productId) {
         String url = recommendationServiceUrl + "/" + productId;
         return restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Recommendation>>() {}).getBody();
     }
 
     @Override
+    public Recommendation createRecommendation(Recommendation body) {
+        return restTemplate.postForObject(recommendationServiceUrl, body, Recommendation.class);
+    }
+
+    @Override
+    public void deleteRecommendation(int productId) {
+        String url = recommendationServiceUrl + "/" + productId;
+        restTemplate.delete(url);
+    }
+
+    @Override
     public List<Review> getReviews(int productId) {
         String url = reviewServiceUrl + "/" + productId;
         return restTemplate.exchange(url, HttpMethod.GET, null, new ParameterizedTypeReference<List<Review>>() {}).getBody();
+    }
+
+    @Override
+    public Review createReview(Review body) {
+        return restTemplate.postForObject(reviewServiceUrl, body, Review.class);
+    }
+
+    @Override
+    public void deleteReviews(int productId) {
+        String url = reviewServiceUrl + "/" + productId;
+        restTemplate.delete(url);
     }
 
     public ProductAggregate getProductAggregateById(int productId) {

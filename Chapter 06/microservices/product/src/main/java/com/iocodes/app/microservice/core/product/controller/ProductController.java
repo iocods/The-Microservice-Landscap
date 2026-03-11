@@ -22,4 +22,14 @@ public class ProductController implements AbstractProductController {
         return productService.getProduct(productId);
     }
 
+    @Override
+    public Product createProduct(Product body) {
+        return productService.createProduct(body);
+    }
+
+    @Override
+    public void deleteProduct(int productId) {
+        productService.deleteProduct(productId);
+    }
+
 }
